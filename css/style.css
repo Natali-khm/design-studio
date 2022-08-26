@@ -32,13 +32,14 @@ body {
   padding-bottom: 90px;
 }
 
-.header-flex-container {
+.header-inner-container {
   font-size: 16px;
   line-height: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .wide-container {
   width: 100%;
   max-width: 1200px;
@@ -77,6 +78,7 @@ a {
   max-width: 1036px;
   width: 100%;
 }
+
 .main-heading {
   font-size: 50px;
   line-height: 62px;
@@ -162,38 +164,40 @@ a {
 
 .our-works {
   padding-top: 65px;
-}
-
-.works-flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  line-height: 0;
-  position: relative;
+  padding-bottom: 65px;
 }
 
 .our-works .section-heading {
   text-align: left;
 }
 
-.works-flex-container a:nth-of-type(1),
-.works-flex-container a:nth-of-type(3) {
+.works-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  line-height: 0;
+}
+
+.works-container a:nth-child(-n + 2) {
   margin-bottom: 30px;
 }
 
-.portfolio-1 {
-  opacity: 0.8;
-  background-color: #8d7370;
+.portfolio-block-1 {
   width: 488px;
   height: 451px;
   color: white;
-  position: relative;
-  position: absolute;
-  z-index: 1;
+  background: linear-gradient(rgba(100, 72, 69, 0.8), rgba(100, 72, 69, 0.8)),
+    url("../img/image 55.png");
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  line-height: 30px;
+  padding: 86px 35px 0;
+  box-sizing: border-box;
 }
 
-.works-flex-container a:nth-child(2) {
-  position: absolute;
+.our-works h3 {
+  text-align: center;
+  margin-top: 40px;
 }
 
 h3 {
@@ -201,12 +205,11 @@ h3 {
   line-height: 37px;
   font-weight: 500;
   margin: 0;
-  margin-bottom: 65px;
 }
 
-.see-more h3::after {
+.see-more-link::after {
   content: "";
-  background: url("../img/arrow 3.png") no-repeat;
+  background: url("../img/arrow 3.png") no-repeat right bottom;
   display: inline-block;
   width: 65px;
   height: 37px;
@@ -218,7 +221,7 @@ h3 {
   background-color: #e2c4ba;
 }
 
-.team-flex-container {
+.team-inner-container {
   display: flex;
   justify-content: space-between;
 }
@@ -232,17 +235,41 @@ h3 {
   padding-bottom: 80px;
 }
 
+.work-stages-section .section-heading {
+  margin-bottom: 130px;
+}
+
 .work-stages-list {
   margin: 0;
   padding: 0;
-  list-style: none;
   display: flex;
   justify-content: space-between;
+  list-style: none;
+  list-style-position: outside;
+}
+
+.work-stages-list li::before {
+  content: counter(list-item);
+  width: 70px;
+  height: 70px;
+  background-color: #8d7370;
+  color: white;
+  position: absolute;
+  top: -90px;
+  left: 107.5px;
+  border-radius: 50%;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .work-stages-list li {
   width: 285px;
   text-align: center;
+  position: relative;
 }
 
 .review-article {
@@ -250,13 +277,13 @@ h3 {
   padding-bottom: 65px;
 }
 
-.review-flex-container {
+.review-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.review-inner-flex-container {
+.review-inner-container {
   display: flex;
   align-items: center;
   width: 834px;
@@ -264,11 +291,11 @@ h3 {
   list-style: none;
 }
 
-.review-inner-flex-container p:first-child {
+.review-inner-container p:first-child {
   margin-top: 0;
 }
 
-.review-flex-container ul {
+.review-container ul {
   padding: 0;
   margin: 0;
 }
@@ -279,10 +306,22 @@ h3 {
   border-radius: 50%;
   border-style: none;
   background-color: #cc8b86;
+  cursor: pointer;
 }
 
 .button-review::before {
-  content: "--------";
+  content: "";
+  width: 32px;
+  height: 20px;
+  display: inline-block;
+}
+
+.button-review.button-prev::before {
+  background: url("../img/Arrow 2.svg") no-repeat center center;
+}
+
+.button-review.button-next::before {
+  background: url("../img/Arrow 1.svg") no-repeat center center;
 }
 
 .review-article blockquote {
@@ -343,6 +382,7 @@ h3 {
   border-bottom: 1px solid white;
   padding: 0;
   height: 35px;
+  padding: 3px;
 }
 
 .form-container input:first-of-type {
@@ -358,6 +398,14 @@ h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   line-height: 30px;
+}
+
+.form-container input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-container input:focus {
+  outline: thin dotted;
 }
 
 .form-container .promo-button {
