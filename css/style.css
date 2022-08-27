@@ -209,7 +209,7 @@ h3 {
 
 .see-more-link::after {
   content: "";
-  background: url("../img/Arrow 3.png") no-repeat right bottom;
+  background: url("../img/Arrow_3.png") no-repeat right bottom;
   display: inline-block;
   width: 65px;
   height: 37px;
@@ -317,11 +317,11 @@ h3 {
 }
 
 .button-review.button-prev::before {
-  background: url("../img/Arrow 2.svg") no-repeat center center;
+  background: url("../img/Arrow_2.svg") no-repeat center center;
 }
 
 .button-review.button-next::before {
-  background: url("../img/Arrow 1.svg") no-repeat center center;
+  background: url("../img/Arrow_1.svg") no-repeat center center;
 }
 
 .review-article blockquote {
