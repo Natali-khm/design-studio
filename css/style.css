@@ -209,7 +209,7 @@ h3 {
 
 .see-more-link::after {
   content: "";
-  background: url("./../img/arrow 3.png") no-repeat right bottom;
+  background: url("../img/Arrow 3.png") no-repeat right bottom;
   display: inline-block;
   width: 65px;
   height: 37px;
